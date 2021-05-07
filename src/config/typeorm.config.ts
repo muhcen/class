@@ -3,7 +3,7 @@ import { Student } from 'src/student/student.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
     type: 'mongodb',
-    url: 'mongodb://localhost:27017/classes',
+    url: 'mongodb://localhost:27017/class',
     synchronize: true,
     useUnifiedTopology: true,
     entities: [Student],
