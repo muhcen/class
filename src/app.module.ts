@@ -9,7 +9,7 @@ import { ClassModule } from './class/class.module';
     imports: [
         StudentModule,
         TypeOrmModule.forRoot(typeOrmConfig),
-        GraphQLModule.forRoot({ autoSchemaFile: true }),
+        GraphQLModule.forRoot({ autoSchemaFile: true, installSubscriptionHandlers: true }),
         ClassModule,
     ],
 })
