@@ -2,7 +2,7 @@ import { Column, Entity, ObjectIdColumn, PrimaryColumn, PrimaryGeneratedColumn }
 @Entity()
 export class Student {
     @ObjectIdColumn()
-    id: string;
+    _id: string;
 
     @Column()
     firstName: string;
