@@ -9,7 +9,7 @@ import { v4 as uuid } from 'uuid';
 export class ClassService {
     constructor(@InjectRepository(Class) private classRepository: Repository<Class>) {}
 
-    async createClass(classInput: ClassInput) {
+    async createClass(classInput: ClassInput): Promise<Class> {
         const { name, description, startDate, lastDate, students } = classInput;
 
         console.log(students);
@@ -23,5 +23,11 @@ export class ClassService {
         });
 
         return this.classRepository.save(Class);
+    }
+
+    async getClasses(): Promise<Class[]> {
+        const classes = await this.classRepository.find();
+
+        return classes;
     }
 }

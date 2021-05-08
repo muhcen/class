@@ -1,5 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { ClassInput } from './class-create.input';
+import { Class } from './class.entity';
 import { ClassService } from './class.service';
 import { ClassType } from './class.type';
 
@@ -8,12 +9,12 @@ export class ClassResolver {
     constructor(private classService: ClassService) {}
 
     @Query((returns) => [ClassType])
-    classes() {
-        return 'h';
+    classes():Promise<Class[]> {
+        return this.classService.getClasses()
     }
 
     @Mutation((returns) => ClassType)
-    createClass(@Args('classInput') classInput: ClassInput) {
+    createClass(@Args('classInput') classInput: ClassInput):Promise<Class> {
         return this.classService.createClass(classInput);
     }
 }
