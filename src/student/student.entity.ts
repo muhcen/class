@@ -4,6 +4,9 @@ export class Student {
     @ObjectIdColumn()
     _id: string;
 
+    @PrimaryColumn()
+    id: string;
+
     @Column()
     firstName: string;
 
