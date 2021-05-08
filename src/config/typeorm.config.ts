@@ -1,4 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { Class } from 'src/class/class.entity';
 import { Student } from 'src/student/student.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
@@ -6,5 +7,5 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     url: 'mongodb://localhost:27017/class',
     synchronize: true,
     useUnifiedTopology: true,
-    entities: [Student],
+    entities: [Student, Class],
 };
