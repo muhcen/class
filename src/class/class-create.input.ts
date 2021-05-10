@@ -25,3 +25,9 @@ export class ClassInput {
     @Field(() => [ID], { defaultValue: [] })
     students: string[];
 }
+
+@InputType()
+export class StudentsInput {
+    @Field(() => [ID], { defaultValue: [] })
+    students: string[];
+}
